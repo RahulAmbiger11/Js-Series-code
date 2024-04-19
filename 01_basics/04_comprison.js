@@ -1,6 +1,6 @@
 
 //Comparison operations in js
-// console.log(2>1)
+// console.log(2 > 1)
 // console.log(2 >= 1)
 // console.log(2 < 1)
 // console.log(2 < 1)
@@ -8,7 +8,7 @@
 // console.log(2 != 1)
 
 //No recommended 
-console.log("2">1) //true
+console.log("2" > 1) //true
 console.log("02" > 1) //true
 
 //when we are comparing 2 values it's datatypes should be same
