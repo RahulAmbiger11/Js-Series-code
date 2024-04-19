@@ -13,10 +13,11 @@ console.log("02" > 1) //true
 
 //when we are comparing 2 values it's datatypes should be same
 
-//IMP IQ
+
 //NOT RECOMMENDED IN  - Development codebase
 console.log(null > 0) //false
 console.log(null == 0) //false
+//IMP IQ
 console.log(null >= 0) //true
 
 //Note: 
