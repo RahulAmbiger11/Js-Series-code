@@ -32,7 +32,7 @@ console.log(id === anotherId) //false
 
 //bigint
 const bigNum = 47364364534547387343n;
-console.log()
+console.log(bigNum)
 
 
 //That's why called Call by Value
@@ -75,3 +75,29 @@ console.log( typeof myFunc) //function or  object function
 
 //typeof Operator: // https://262.ecma-international.org/5.1/#sec-11.4.3
 
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//stack(Primitive) - Call by Value , Heap(Non Primitive) -  Call by Referrence
+
+//primitive
+let myYoutubeName = "Rahul7781"
+let anotherName = myYoutubeName
+
+anotherName = "Anand"
+console.log(anotherName) //Anand
+console.log(myYoutubeName) //Rahul7781
+
+//non primitive
+let userOne = {
+    email: "user@google.com",
+    upi: "user@ybl"
+}
+let userTwo = userOne
+
+//accessing
+userTwo.email = "rahul@gmail.com"
+
+console.log(userOne.email) //rahul@gmail.com
+console.log(userTwo.email) //rahul@gmail.com
+
+//Refer for Call by value and Call by Referrence
+//https://youtu.be/sscX432bMZo?t=7533
