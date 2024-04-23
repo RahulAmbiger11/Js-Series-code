@@ -76,3 +76,42 @@ console.log(Object.values(fbUser)) //returns vals in arr in []
 console.log(Object.entries(fbUser)) //returns entries in arr in []
 
 console.log(fbUser.hasOwnProperty('isLoggedIn')) //true
+
+
+const course = {
+    coursename: "Js Series",
+    price: 999,
+    instructor: "Rahul"
+}
+
+//Destructuring of objs
+const {instructor : inst} = course
+// console.log(instructor)
+console.log(inst)
+
+//API Json data
+
+// {
+//     "name": "rahul",
+//     "coursename": "js in hindi",
+//     "price": "free"
+// }
+
+[
+    {
+
+    },
+    {
+
+    }, 
+    {
+
+    }
+]
+
+/*
+API's
+- random userme: https://randomuser.me/
+- Json Formatter: https://jsonformatter.org/
+*/
+
