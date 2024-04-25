@@ -1,4 +1,4 @@
-//Control flows in js
+//Control flow in js
 
 const isUserLoggedIn = true
 if(2 !== 3) {
@@ -19,12 +19,12 @@ if(temp < 50) {
     console.log("Tempreture greater than 50")
 }
 
-// const score  = 200
-// if(score > 100) {
-//     let power = "fly"
-//     console.log(`User Power ${power}`)
-// }
-// console.log(`User Power ${power}`)
+/* const score  = 200
+if(score > 100) {
+    let power = "fly"
+    console.log(`User Power ${power}`)
+}
+console.log(`User Power ${power}`) */
 
 //shorthand notation (Implicit scope)
 // const balance = 1000
