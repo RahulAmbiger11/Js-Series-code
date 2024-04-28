@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!-- Add, Edit and remove of DOM Elements -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add, Edit and remove of DOM Elements</title>
+</head>
+<body style="color: white; background-color: black;">
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+
+<script>
+    //Adding of DOM Elements
+    //Approach-1
+    function addLang(lang) {
+        const li = document.createElement('li')
+        //Complete Tree Traversal Issue
+        li.innerHTML = `${lang}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addLang("Java")
+    addLang("Python")
+
+    //Approach-2
+    //Optimized Approach
+    function addOptiLang(langName) {
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptiLang("Swift")
+    addOptiLang("C++")
+
+    //Edit
+    // document.querySelector('')
+</script>
+</html>
