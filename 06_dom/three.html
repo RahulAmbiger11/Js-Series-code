@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creation of new Node Element in DOM</title>
+</head>
+<body style="color: white; background-color: black;">
+    
+</body>
+
+<script>
+    //creation of element
+    const div = document.createElement('div')
+    console.log(div)
+    div.className = "main"
+    div.style.backgroundColor = "orange"
+    div.id = Math.round(Math.random()*10+1)
+    div.setAttribute("title", "Js based learning")
+
+    //way-1
+    // div.innerText = "JS Learning by Rahul"
+
+    //way-2
+    const addText = document.createTextNode("JS is Fun")
+    div.appendChild(addText)
+
+    //To render it on webpage
+    document.body.appendChild(div)
+
+
+</script>
+</html>
