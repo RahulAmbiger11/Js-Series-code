@@ -5,6 +5,7 @@ buttons.forEach((button) => {
     // console.log(button)
     button.addEventListener('click', (e)=>{
         console.log(e)
+        
         switch (e.target.id) {
             case 'grey':
                 body.style.backgroundColor = e.target.id
