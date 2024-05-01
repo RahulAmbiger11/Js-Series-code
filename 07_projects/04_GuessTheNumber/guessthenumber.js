@@ -18,7 +18,7 @@ if(playGame) {
         e.preventDefault()
         const guess = parseInt(userInput.value)
         validateGuess(guess)
-        console.log(guess)
+        // console.log(guess)
 
     })
 }
@@ -80,7 +80,7 @@ function endGame() {
 
 function newGame() {
     const newGameBtn = document.querySelector('#newGame')
-    newGameBtn.addEventListener('click', (e)=>{
+    newGameBtn.addEventListener('click', ()=>{
         randomNumber = parseInt((Math.random()*100)+1)
         prevGuess = []
         numGuess = 1
