@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+
+<script>
+    /* document.getElementById('owl').onclick = function(){
+        alert("owl clicked")
+    } */
+
+    //attachEvent()
+    //jQuery - on
+
+     /* type, timestamp, defaultPrevented
+    target, toElement, srcElement, currentTarget
+
+    IMP IQ
+    clientX, clientY, screenX, screenY
+    altKey, ctrlKey, shiftKey, keyCode */
+
+
+    // ** IMP IQ **
+
+    //1. Event Bubbling
+    /* document.getElementById('images').addEventListener('click', (e)=>{
+        //IMP 
+        // console.log(e)
+        // console.log(e.timeStamp)
+        // console.log(e.width)
+        // console.log(e.height)
+        // console.log(e.x)
+        // console.log(e.y)
+
+        console.log("Clicked inside ul");
+
+    }, false)
+
+    document.getElementById('owl').addEventListener('click', (e)=>{
+        console.log("Owl clicked")
+        
+        //to prevent event propogation
+        // e.stopPropagation()
+    }, false) */
+
+    //2. Event Capturing
+    /* document.getElementById('images').addEventListener('click', (e)=>{
+        //IMP 
+        console.log(e)
+        console.log(e.timeStamp)
+        console.log(e.width)
+        console.log(e.height)
+        console.log(e.x)
+        console.log(e.y)
+
+        console.log("Clicked inside ul");
+
+    }, true)
+
+    document.getElementById('owl').addEventListener('click', (e)=>{
+        console.log("Owl clicked")
+    }, true) */
+
+    /*
+    Event Propogation:
+    i. Event Bubbling - Inside elem → Outside elem
+    ii. Event Capturing - Outside elem - Inside elem
+    */
+
+
+
+    /* document.getElementById('google').addEventListener('click',(e)=>{
+        e.preventDefault()
+
+        //to stop propogation
+        e.stopPropagation()
+        console.log("Google clicked")
+    }, false) */
+
+    document.querySelector('#images').addEventListener('click', (e)=>{
+        // console.log(e)
+        // let removeIt = e.target.tagName
+        if(e.target.tagName === 'IMG') {
+            console.log(e.target.id)
+            let removeIt = e.target.parentNode
+            //approach -1
+            removeIt.remove()
+        }
+        console.log(e.target.tagName)
+        
+        
+        //approach -2
+        // removeIt.parentNode.removeChild(removeIt)
+    }, false)
+
+
+
+</script>
+</html>
+
+<!-- JS - sequential prog. language 
+
+- Event listeners will give 'propogation ability'
+Event - 2 types
+i. Environment Events
+ii. Browser Events
+
+- Events Spill Over
+-->
