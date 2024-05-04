@@ -6,6 +6,36 @@
     <title>Async Code</title>
 </head>
 <body>
+    <h1>I am Rahul</h1>
+    <button id="stop">Stop</button>
     
 </body>
+
+<script>
+    //Approach-1
+    //setTimeout()
+
+    /* setTimeout(()=>{
+        console.log("Rahul");
+    }, 2000) */
+
+    //Approach-2
+    /* const sayRahul = () => {
+        console.log("I am Learning JS");
+    }
+    setTimeout(sayRahul, 2000) */
+
+    //setTimeout()
+    const changeText = ()=>{
+        document.querySelector('h1').innerHTML = "Best JS Series!!"
+    }
+    const setTextTime = setTimeout(changeText, 2000)
+
+    //clearTimeout()
+    document.querySelector('#stop').addEventListener('click', ()=>{
+        clearTimeout(setTextTime)
+        console.log("STOPPED!!");
+    })
+
+</script>
 </html>
