@@ -1,5 +1,4 @@
 //generate random colors
-
 let randomColor = () => {
     let hex = "0123456789ABCDEF"
     let color = "#"
