@@ -1,0 +1,87 @@
+<!-- XMLHttpRequest
+Refer: https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
+</style>
+
+<body>
+    <!-- Value	State	            Description
+0	    UNSENT	            Client has been created. open() not called yet.
+1	    OPENED	            open() has been called.
+2	    HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	    LOADING	Downloading; responseText holds partial data.
+4	    DONE	             The operation is complete.
+     -->
+
+    <div id="personalData"></div>
+
+</body>
+<script>
+    const requestUrl = "https://api.github.com/users/RahulAmbiger11"
+    const xhr = new XMLHttpRequest()
+    xhr.open('GET', requestUrl)
+    xhr.onreadystatechange = function () {
+        console.log(xhr.readyState)
+        if (xhr.readyState === 4) {
+            const data = JSON.parse(this.responseText)
+
+            document.getElementById('personalData').innerHTML = `
+            <div class="card">
+                <img src=${data.avatar_url} alt="Rahul Ambiger" style="width:100%">
+                <h1>${data.name}</h1>
+                <p class="title">Java Full Stack Developer</p>
+                <p>GitHub Followers: ${data.followers}</p>
+                <p>GitHub Repositories: ${data.public_repos}</p>
+                <p><button>Contact</button></p>
+            </div>
+            `
+        }
+    }
+    xhr.send()
+</script>
+
+</html>
