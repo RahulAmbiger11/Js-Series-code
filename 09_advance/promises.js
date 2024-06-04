@@ -3,57 +3,68 @@ Promises in js - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Referen
 Previous promise libraries - Q or BlueBird
 */
 
-//Way-1
-//Creation
-const myPromise = new Promise((resolve, reject)=>{
-    setTimeout(()=>{
-        console.log("Async task is done");
-        resolve()
-
-    },1000)
-})
-
-//Consumption
-myPromise.then(() => {
-    console.log("Promise consumed")
-})
-
-//Way-2
-new Promise((resolve, reject) => {
-    setTimeout(()=>{
-        console.log("Async Promise is Created");
+//promise creation
+//way-1
+/* let promiseOne = new Promise(function(resolve, reject){
+    //Async tasks - DB Calls, N/W calls
+    setTimeout(function(){
+        console.log("Promise Created")
         resolve()
     },1000)
-}).then(()=>{
-    console.log("Async 2 is resolved")
 })
 
-const promiseThree = new Promise((resolve, reject)=>{
-    setTimeout(()=>{
-        resolve({username:"Rahul", email:"rahul@gmail.com"})
+//promise consumption
+promiseOne.then(function(){
+    console.log("Promise Consumed")
+}) */
+
+//way-2
+/* new Promise(function(resolve, reject){
+    setTimeout(function(){
+        console.log("Async task 2")
+        resolve()
+    }, 1000)
+}).then(function(){
+    console.log("Async task 2 resolved")
+})
+
+ */
+/* let promiseThree = new Promise(function(resolve, reject){
+    //passing params using resolve()
+    setTimeout(function(){
+        resolve({username:"rahul", email:"rahul@gmail.com"})
     },1000)
 })
 
-promiseThree.then((user)=>{
+promiseThree.then(function(user){
     console.log(user)
 })
-
-const promiseFour = new Promise((resolve, reject)=>{
-    setTimeout(()=>{
-        let error = true
-        if(!error) {
-            resolve({username:"hitesh", password:"12345"})
-        } else{
-            reject("ERROR: Something went wrong")
+ */
+const promiseFour = new Promise(function(resolve, reject){
+    setTimeout(function(){
+        let error = false
+        if (!error) {
+            resolve({username: "rahul", password: "123"})
+        } else {
+            reject('ERROR: Something went wrong')
         }
-    })
+    }, 1000)
 })
 
-promiseFour.then((user) => {
-    console.log(user)
+ promiseFour
+ .then((user) => {
+    console.log(user);
     return user.username
-}).then((username)=>{
-    console.log(username)
-}).then((error)=>{
-    console.log(error)
-})
+}).then((username) => {
+    console.log(username);
+}).catch(function(error){
+    console.log(error);
+}).finally(() => console.log("The promise is either resolved or rejected"))
+
+
+
+
+
+
+
+
