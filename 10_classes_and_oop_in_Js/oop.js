@@ -68,3 +68,7 @@ const autoTwo = new Car("Honda","Amaze",2002)
 console.log(auto instanceof Car) //true
 console.log(autoTwo instanceof Car) //true
 
+//we can't use "this" kewword in arrow functions
+//Js Uses Prototypal behaviour refer: https://youtu.be/_TjtAyMkiTI?t=26302
+
+
